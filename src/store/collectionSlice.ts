@@ -41,6 +41,7 @@ export type CollectionDataType = {
 
 export interface CollectionType {
   data: CollectionDataType
+  items: Array<object>
 }
 
 const initialState: CollectionType = {
@@ -82,6 +83,7 @@ const initialState: CollectionType = {
     wiki_url: '',
     is_nsfw: false,
   },
+  items: [],
 }
 
 export const collectionSlice = createSlice({
@@ -91,10 +93,13 @@ export const collectionSlice = createSlice({
     setCollection: (state, action: PayloadAction<CollectionDataType>) => {
       state.data = action.payload
     },
+    setCollectionItems: (state, action: PayloadAction<Array<object>>) => {
+      state.items = action.payload
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setCollection } = collectionSlice.actions
+export const { setCollection, setCollectionItems } = collectionSlice.actions
 
 export default collectionSlice.reducer

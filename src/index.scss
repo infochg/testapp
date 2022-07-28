@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+textarea {
+  background: none;
+  border: none;
+}
+
+button {
+  background: none;
+  border: none;
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.custom-scroll-bar {
+  &::-webkit-scrollbar {
+    width: 5px;
+    position: absolute;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f8f8f8;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #000;
+
+    &:hover {
+      background: #6a6a6a;
+    }
+  }
+}

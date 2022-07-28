@@ -1,6 +1,4 @@
-import { CollectionDataType } from './collectionSlice'
-
-export const mockData: CollectionDataType = {
+export const COLLECTIONDATA = {
   editors: [
     '0xeaf54391793cc80de696d72713d7518c6190bfe0',
     '0x7b557aa52d0055d84b1e3f5487d9018f318372c1',

@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+import { reducer as formReducer } from 'redux-form'
 
 import collectionReducer from './collectionSlice'
+import notificationsReducer from './notificationsSlice'
 
 export const store = configureStore({
   reducer: {
+    form: formReducer,
     collection: collectionReducer,
+    notifications: notificationsReducer,
   },
 })
 

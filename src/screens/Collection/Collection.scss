@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.collection-page {
+  &__header {
+    padding: 15px 0 20px;
+  }
+
+  &__name {
+    //@include for-phone-only {
+    //  margin-bottom: 10px;
+    //}
+  }
+
+  &__description {
+    padding-bottom: 20px;
+  }
+
+  &__items-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 10%;
+    overflow: hidden;
+    & img {
+      width: 100%;
+      height: 100%;
+      transition: all 0.1s;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+}

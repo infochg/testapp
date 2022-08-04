@@ -1,10 +1,9 @@
 import './SearchForm.scss'
 
+import SearchIcon from '@mui/icons-material/Search'
 import { TextField } from '@mui/material'
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-
-import CustButton from '../CustButton'
 
 const renderTextField = ({ label, input, meta: { touched, invalid, error }, ...custom }) => (
   <TextField
@@ -21,10 +20,16 @@ const renderTextField = ({ label, input, meta: { touched, invalid, error }, ...c
 let SearchForm = (props) => {
   const { handleSubmit } = props
   return (
-    <form onSubmit={handleSubmit}>
-      <Field name='collection' component={renderTextField} label='Collection slug' type='text' />
-      <button type='submit' className='submit-btn'>
-        <CustButton text='Find collection' />
+    <form onSubmit={handleSubmit} className='search-form'>
+      <Field
+        name='collection'
+        component={renderTextField}
+        label='Collection slug'
+        type='text'
+        className='search-form__field'
+      />
+      <button type='submit' className='search-form__submit-btn'>
+        <SearchIcon />
       </button>
     </form>
   )

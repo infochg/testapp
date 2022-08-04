@@ -1,6 +1,7 @@
 interface FetchDataProps {
   link: string
   method: string
+  headers?: object
   onSuccess: (a: any) => void
   onError: (a: any) => void
   showLoader?: (a: boolean) => void
@@ -10,6 +11,7 @@ interface FetchDataProps {
 const fetchData = async ({
   link,
   method,
+  headers,
   onSuccess,
   onError,
   showLoader,
@@ -19,6 +21,10 @@ const fetchData = async ({
     const requestHeaders: HeadersInit = new Headers()
     if (method !== 'GET') {
       requestHeaders.set('Content-Type', 'application/json')
+    }
+
+    if (headers) {
+      Object.keys(headers).map((item: string) => requestHeaders.set(item, headers[item]))
     }
 
     if (showLoader) {
@@ -53,7 +59,7 @@ const fetchData = async ({
       if (showLoader) {
         showLoader(false)
       }
-      
+
       onSuccess(resData)
     }
 

@@ -1,5 +1,15 @@
 @import '../../styles/variables';
 
-.submit-btn {
-  margin: 20px 0;
+.search-form {
+  position: relative;
+  &__field {
+    input {
+      padding-right: 45px;
+    }
+  }
+  &__submit-btn {
+    position: absolute;
+    right: 17px;
+    top: 17px;
+  }
 }

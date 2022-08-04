@@ -12,6 +12,7 @@ body, html, #root {
 body {
   min-width: 320px;
   font-weight: 400;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
 
 a {
@@ -49,10 +50,6 @@ button {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #000;
-
-    &:hover {
-      background: #6a6a6a;
-    }
+    background: #D4DEE8;
   }
 }

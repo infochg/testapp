@@ -1,6 +1,7 @@
 import './Sidebar.scss'
 
 import ErrorBoundary from '../ErrorBoundary'
+import Filter from '../Filter'
 import Search from '../Search'
 
 function Sidebar() {
@@ -8,6 +9,7 @@ function Sidebar() {
     return (
       <div className='sidebar'>
         <Search />
+        <Filter />
       </div>
     )
   } catch (e) {

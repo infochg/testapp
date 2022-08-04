@@ -42,6 +42,7 @@ export type CollectionDataType = {
 export interface CollectionType {
   data: CollectionDataType
   items: Array<object>
+  filters: Array<object>
 }
 
 const initialState: CollectionType = {
@@ -84,6 +85,7 @@ const initialState: CollectionType = {
     is_nsfw: false,
   },
   items: [],
+  filters: [],
 }
 
 export const collectionSlice = createSlice({
@@ -96,10 +98,19 @@ export const collectionSlice = createSlice({
     setCollectionItems: (state, action: PayloadAction<Array<object>>) => {
       state.items = action.payload
     },
+    setCollectionFilters: (state, action: PayloadAction<object>) => {
+      const curFilters = state.filters.slice(0)
+      curFilters.push(action.payload)
+      state.filters = curFilters
+    },
+    clearCollectionFilters: (state) => {
+      state.filters = []
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setCollection, setCollectionItems } = collectionSlice.actions
+export const { setCollection, setCollectionItems, setCollectionFilters, clearCollectionFilters } =
+  collectionSlice.actions
 
 export default collectionSlice.reducer
